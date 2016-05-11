@@ -2,7 +2,8 @@ angular.module('adminApp')
 .controller('newsCtrl', [
 '$scope',
 '$state',
-function($scope,$state){
+'DataService',
+function($scope,$state,DataService){
   //Accordian config
   $scope.oneAtATime = true;
 
@@ -31,11 +32,15 @@ function($scope,$state){
   //new functions start here
   $scope.remove = function() {
     console.log('getting in remove function')
-
   };
 
   $scope.save = function() {
     console.log('getting in save function')
+    DataService.create();
+  };
+
+  $scope.getNews = function() {
+    DataService.getNews();
   };
 
 }]);
