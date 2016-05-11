@@ -23,8 +23,19 @@ function($scope,$state){
     var newItemNo = $scope.items.length + 1;
     $scope.items.push('Item ' + newItemNo);
   };
-  
+
   $scope.callMeWhenCompiled = function () {
     console.log("----->>>>> Called");
   };
+
+  //new functions start here
+  $scope.remove = function() {
+    console.log('getting in remove function')
+
+  };
+
+  $scope.save = function() {
+    console.log('getting in save function')
+  };
+
 }]);

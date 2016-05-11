@@ -56,7 +56,7 @@ angular.module('adminApp', [
         },
         'news@newsPage' : {
           templateUrl: 'news/_news.html',
-          controller: 'dashboardCtrl'
+          controller: 'newsCtrl'
         }
       },
       data: {
