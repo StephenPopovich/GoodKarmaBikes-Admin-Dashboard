@@ -3,7 +3,7 @@ angular.module('adminApp')
 '$scope',
 '$state',
 'DataService',
-function($scope,$state,DataService, $uiModal){
+function($scope,$state,DataService, $Modal){
   //Accordian config
   $scope.animationsEnabled = true;
   console.log("hi")
@@ -23,7 +23,7 @@ function($scope,$state,DataService, $uiModal){
 
   $scope.removeModal = function() {
   console.log("yo")
-   var modalInstance = $uibModal.open({
+   var modalInstance = $Modal.open({
       animation: $scope.animationsEnabled,
       template: 'modal/_deleteModal.html',
       controller: 'modal.js'
