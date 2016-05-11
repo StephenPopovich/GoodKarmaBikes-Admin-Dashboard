@@ -81,7 +81,7 @@ angular.module('adminApp', [
       }
     })
     .state('bikePage', {
-      url:'/announcements',
+      url:'/bikes',
       views: {
         '@': {
          templateUrl:'views/newsLayout.html'
@@ -90,13 +90,14 @@ angular.module('adminApp', [
           templateUrl: 'header/_header.html',
         },
         'news@bikePage' : {
-          templateUrl: 'announcements/_announcements.html',
+          templateUrl: 'addBikeForm/_addBikeForm.html',
         }
       },
       data: {
         css: ['news/newsStyle.css']
       }
     })
+
 
   $urlRouterProvider.otherwise('/');
 
