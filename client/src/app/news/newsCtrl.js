@@ -2,10 +2,10 @@ angular.module('adminApp')
 .controller('newsCtrl', [
 '$scope',
 '$state',
-function($scope,$state){
+function($scope,$state, $uiModal){
   //Accordian config
-  $scope.oneAtATime = true;
-
+  $scope.animationsEnabled = true;
+  console.log("hi")
   $scope.groups = [
     {
       title: "Dynamic Group Header - 1",
@@ -19,12 +19,19 @@ function($scope,$state){
 
   $scope.items = ['Item 1', 'Item 2', 'Item 3'];
 
-  $scope.addItem = function() {
-    var newItemNo = $scope.items.length + 1;
-    $scope.items.push('Item ' + newItemNo);
-  };
-  
-  $scope.callMeWhenCompiled = function () {
-    console.log("----->>>>> Called");
-  };
+
+  $scope.removeModal = function() {
+  console.log("yo")
+   var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      template: 'modal/_deleteModal.html',
+      controller: 'modal.js'
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+   }
 }]);
