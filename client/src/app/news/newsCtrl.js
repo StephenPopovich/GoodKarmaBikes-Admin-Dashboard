@@ -2,7 +2,8 @@ angular.module('adminApp')
 .controller('newsCtrl', [
 '$scope',
 '$state',
-function($scope,$state, $uiModal){
+'DataService',
+function($scope,$state,DataService, $uiModal){
   //Accordian config
   $scope.animationsEnabled = true;
   console.log("hi")
@@ -26,12 +27,31 @@ function($scope,$state, $uiModal){
       animation: $scope.animationsEnabled,
       template: 'modal/_deleteModal.html',
       controller: 'modal.js'
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
+      
     });
 
    }
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
+  };
+
+  $scope.callMeWhenCompiled = function () {
+    console.log("----->>>>> Called");
+  };
+
+  //new functions start here
+  $scope.remove = function() {
+    console.log('getting in remove function')
+  };
+
+  $scope.save = function() {
+    console.log('getting in save function')
+    DataService.create();
+  };
+
+  $scope.getNews = function() {
+    DataService.getNews();
+  };
+
 }]);

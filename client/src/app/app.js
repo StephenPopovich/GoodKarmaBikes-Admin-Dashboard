@@ -56,7 +56,7 @@ angular.module('adminApp', [
         },
         'news@newsPage' : {
           templateUrl: 'news/_news.html',
-          controller: 'dashboardCtrl'
+          controller: 'newsCtrl'
         }
       },
       data: {
@@ -80,6 +80,24 @@ angular.module('adminApp', [
         css: ['news/newsStyle.css']
       }
     })
+    .state('bikePage', {
+      url:'/bikes',
+      views: {
+        '@': {
+         templateUrl:'views/newsLayout.html'
+        },
+        'header@bikePage' : {
+          templateUrl: 'header/_header.html',
+        },
+        'news@bikePage' : {
+          templateUrl: 'addBikeForm/_addBikeForm.html',
+        }
+      },
+      data: {
+        css: ['news/newsStyle.css']
+      }
+    })
+
 
   $urlRouterProvider.otherwise('/');
 
